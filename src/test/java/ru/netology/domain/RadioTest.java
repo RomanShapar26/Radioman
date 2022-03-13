@@ -35,17 +35,10 @@ class RadioTest {
     }
 
     @Test
-    void shouldOverMaxStation1() {
+    void shouldOverMaxStation() {
         radio.setCurrentStation(9);
         radio.nextStation();
         assertEquals(0, radio.getCurrentStation());
-    }
-
-    @Test
-    void shouldOverMaxStation2() {
-        radio.setCurrentStation(10);
-        radio.nextStation();
-        assertEquals(1, radio.getCurrentStation());
     }
 
     @Test
@@ -56,18 +49,12 @@ class RadioTest {
     }
 
     @Test
-    void shouldBelowMinStation1() {
+    void shouldBelowMinStation() {
         radio.setCurrentStation(0);
         radio.previousStation();
         assertEquals(9, radio.getCurrentStation());
     }
 
-    @Test
-    void shouldBelowMinStation2() {
-        radio.setCurrentStation(-1);
-        radio.previousStation();
-        assertEquals(9, radio.getCurrentStation());
-    }
 
     @Test
     void shouldChangeVolume() {
@@ -84,17 +71,10 @@ class RadioTest {
     }
 
     @Test
-    void shouldOverMaxVolume1() {
+    void shouldOverMaxVolume() {
         radio.setCurrentVolume(10);
         radio.increaseVolume();
         assertEquals(10, radio.getCurrentVolume());
-    }
-
-    @Test
-    void shouldOverMaxVolume2() {
-        radio.setCurrentVolume(11);
-        radio.increaseVolume();
-        assertEquals(1, radio.getCurrentVolume());
     }
 
     @Test
@@ -105,17 +85,12 @@ class RadioTest {
     }
 
     @Test
-    void shouldBelowMinVolume1() {
+    void shouldBelowMinVolume() {
         radio.setCurrentVolume(0);
         radio.decreaseVolume();
         assertEquals(0, radio.getCurrentVolume());
     }
 
-    @Test
-    void shouldBelowMinVolume2() {
-        radio.setCurrentVolume(-1);
-        radio.decreaseVolume();
-        assertEquals(0, radio.getCurrentVolume());
-    }
+
 
 }
